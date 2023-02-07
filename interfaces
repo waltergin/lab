@@ -1,0 +1,15 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+#Eth0 Configuration for LAB Access
+auto eth0
+iface eth0 inet dhcp
+        post-up route add -net default gw 30.204.4.240 dev eth0
+        post-up route del -net default gw 30.204.4.1 dev eth0
+        post-up /etc/network/if-up.d/dns
