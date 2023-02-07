@@ -1,0 +1,5 @@
+# Verify checksum VM Kali Virtualbox 2022.4
+(Get-FileHash kali-linux-2022.4-virtualbox-amd64.7z).Hash -eq "b0d4d68ed74f763c0e761e5d39350f339792c42f8e8f6da03c2fdcd33ca676ef".toUpper()
+
+# Replace Keyboard Layout
+sed -i 's/XKBLAYOUT=.*$/XKBLAYOUT="fr"/g' /etc/default/keyboard
