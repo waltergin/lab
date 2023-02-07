@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "nameserver 10.66.66.53" > /etc/resolv.conf
